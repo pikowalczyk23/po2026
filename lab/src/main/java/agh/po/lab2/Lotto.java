@@ -36,7 +36,7 @@ public class Lotto {
         }
         int liczbaTrafien=0;
         for (int i=0; i<6; i++){
-            if (lista.contains(liczbyGracza[i])){
+            if (lista.contains(liczbyGracza.get(i))){
                 liczbaTrafien=liczbaTrafien+1;
             }
         }
