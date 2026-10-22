@@ -8,8 +8,11 @@ public class Lotto {
     public static void main(String[] args) {
 
         ArrayList<Integer> lista = new ArrayList<>();
+        ArrayList<Integer> liczbyGracza = new ArrayList<>();
         Random r=new Random();
-
+        for (int i=0;i<6;i++){
+            liczbyGracza.add(Integer.parseInt(args[i]));
+        }
         int wylosowanaLiczba;
         for (int i=0; i<6; i++) {
             wylosowanaLiczba=r.nextInt(49)+1;
@@ -19,10 +22,22 @@ public class Lotto {
             lista.add(wylosowanaLiczba);
         }
 
-        System.out.print("Wylosowane liczby to ");
+        int liczbaTrafien=0;
+        for (int i=0; i<6; i++){
+            if (lista.contains(liczbyGracza.get(i))){
+                liczbaTrafien=liczbaTrafien+1;
+            }
+        }
+        System.out.print("Twoje wytypowane liczby: ");
+        System.out.println(liczbyGracza);
+        System.out.print("Wylosowane liczby: ");
         System.out.println(lista);
+        System.out.print("Liczba trafionych liczb: ");
+        System.out.println(liczbaTrafien);
 
-        ArrayList<Integer> liczbyGracza = new ArrayList<>();
+        //Losowanie z wczytaniem liczb od gracza i sprawdzeniem ich poprawności
+
+        liczbyGracza.clear();
         Scanner wczytaj = new Scanner(System.in);
         int liczbaGracza;
         System.out.println("Podaj swoje 6 liczb od 1 do 49");
@@ -45,7 +60,7 @@ public class Lotto {
             lista.add(wylosowanaLiczba);
         }
 
-        int liczbaTrafien=0;
+        liczbaTrafien=0;
         for (int i=0; i<6; i++){
             if (lista.contains(liczbyGracza.get(i))){
                 liczbaTrafien=liczbaTrafien+1;
@@ -90,8 +105,7 @@ public class Lotto {
                     liczbaTrafien=liczbaTrafien+1;
                 }
             }
-        }
-        while (liczbaTrafien!=6);
+        } while (liczbaTrafien!=6);
 
         long stop=System.currentTimeMillis();
 
