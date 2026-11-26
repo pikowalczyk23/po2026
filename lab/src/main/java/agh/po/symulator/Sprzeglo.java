@@ -1,7 +1,7 @@
 package agh.po.symulator;
 
 public class Sprzeglo {
-    boolean stanSprzegla;
+    boolean stanSprzegla; //true - wcisniete, false - puszczone
 
     void wcisnijSprzeglo(){
         if(stanSprzegla==false) {

@@ -4,8 +4,10 @@ public class SkrzyniaBiegow {
     int aktualnyBieg;
     int iloscBiegow;
 
-    void zwiekszBieg(){
-        if(aktualnyBieg<iloscBiegow){
+    //dodac wyjatek przy probie zmiany biegu bez wcisniecia sprzegla
+
+    void zwiekszBieg(boolean stanSprzegla){
+        if(aktualnyBieg<iloscBiegow && stanSprzegla==true){
             aktualnyBieg+=1;
         }
         else{
